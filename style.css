@@ -1,0 +1,34 @@
+#main-board {
+  background-color: aqua;
+  position: relative;
+  width: 1800px;
+  height: 900px;
+  margin: auto;
+}
+
+#land {
+  background-color: rgb(143, 22, 22);
+  width: 1800px;
+  height: 100px;
+  margin: auto;
+}
+
+#player {
+  position: absolute;
+  background-color: black;
+  width: 100px;
+  height: 150px;
+}
+
+.obstacle {
+  position: absolute;
+  background-color: brown;
+  width: 100px;
+  height: 150px;
+}
+.circle {
+  position: absolute;
+  background-color: brown;
+  width: 100px;
+  height: 150px;
+}
