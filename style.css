@@ -1,14 +1,14 @@
 #main-board {
   background-color: aqua;
   position: relative;
-  width: 1800px;
+  width: 1080px;
   height: 900px;
   margin: auto;
 }
 
 #land {
   background-color: rgb(143, 22, 22);
-  width: 1800px;
+  width: 1080px;
   height: 100px;
   margin: auto;
 }
