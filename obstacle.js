@@ -1,9 +1,9 @@
-
-function Obstacle (x, y, parent) {
+function Obstacle (x, y, parent, arr) {
     let self = this
     this.x = x 
     this.y = y
     this.speed = -10
+    this.width = 290
     this.sprite = document.createElement('div')
 
     this.insertObstacle = function () {
@@ -23,6 +23,7 @@ function Obstacle (x, y, parent) {
 
     this.obstacleRemove = function () {
         parent.removeChild(this.sprite)
+        arr = arr.splice(0, 1)
         clearInterval(this.timerId)
     }
 
