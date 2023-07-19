@@ -29,8 +29,6 @@ function Obstacle (x, y, parent) {
     }
 
     this.timerId = setInterval(this.move,100)
-
-    
 }
 
 export {Obstacle}
