@@ -4,13 +4,15 @@ function Obstacle (x, y, parent) {
     this.x = x 
     this.y = y
     this.speed = -10
+    this.parent = parent
     this.sprite = document.createElement('div')
 
     this.insertObstacle = function () {
         this.sprite.classList.add('obstacle')
         this.sprite.style.left = this.x + 'px'
         this.sprite.style.top = this.y + 'px'
-        parent.appendChild(this.sprite)
+        console.log(self.parent)
+        self.parent.appendChild(this.sprite)
     }
 
     this.move = function () {
