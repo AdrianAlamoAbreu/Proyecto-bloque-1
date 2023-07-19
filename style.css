@@ -38,3 +38,12 @@
   width: 100px;
   height: 150px;
 }
+
+#scoreBoard{
+  position: absolute;
+  font-size: xx-large;
+  color: black;
+  left: 50px;
+  top: 10px
+
+}

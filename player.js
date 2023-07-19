@@ -1,8 +1,9 @@
 function Player (x,y,parent) {
     this.x = x
     this.y = y
-    this.sprite = document.createElement('div')
     this.width = 100;
+    this.sprite = document.createElement('div')
+    
 
     this.insertPlayer = function () {
         this.sprite.setAttribute('id','player')
