@@ -4,6 +4,9 @@
   width: 1080px;
   height: 900px;
   margin: auto;
+  overflow: hidden;
+  
+  
 }
 
 #land {
@@ -34,4 +37,13 @@
   background-color: brown;
   width: 100px;
   height: 150px;
+}
+
+#scoreBoard{
+  position: absolute;
+  font-size: xx-large;
+  color: black;
+  left: 50px;
+  top: 10px
+
 }
