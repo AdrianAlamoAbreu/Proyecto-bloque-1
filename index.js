@@ -10,11 +10,22 @@ let game = new Game(player);
 function start() {
   let obstacleTimer = setInterval(game.createObstacle, 10000);
   let collisionTimer = setInterval(game.checkCollision, 100);
+  let gameOverTimer = setInterval(function(){
+    if (Math.abs(incline) > 10 && player.sprite.offsetTop >= 745) {
+          alert('gameOver')
+      }
+  }, 100)
+  let checkWinnerTimer = setInterval(function() {
+    if (score1 === 20 && player.sprite.offsetTop >= 745){
+      alert('You Win!!!!')
+    }
+  },2000)
 }
 
 let incline = 0;
 
 window.addEventListener("keydown", function (e) {
+  if (player.sprite.offsetTop <= 700) {
   if (e.key === "a") {
     incline -= 5;
     player.sprite.style.transform = `rotate(${incline}deg)`;
@@ -27,6 +38,8 @@ window.addEventListener("keydown", function (e) {
     incline = 0
     insertScore()
   } 
+}
+
   console.log(incline)
 });
 

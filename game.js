@@ -20,7 +20,7 @@ function Game (player) {
         } else if (self.player.y <= 745) {
             self.player.y +=7;
             self.player.sprite.style.top = self.player.y +'px' 
-        }
+        } 
     }
        )};
       
