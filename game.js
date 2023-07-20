@@ -1,11 +1,12 @@
 import { Obstacle } from "./obstacle.js";
-let mainBoard = document.getElementById("main-board");
+let mainBoard = document.getElementById('main-board');
 
-function Game(player) {
-  let self = this;
-  this.obstacles = [];
-  this.player = player;
-  this.createObstacle = function () {
+function Game (player) {
+    this.obstacles =[]
+    let self = this;
+    this.player = player;
+
+    this.createObstacle = function () {
         let obstacle = new Obstacle (980, 750, mainBoard, self.obstacles)
         obstacle.insertObstacle()
         self.obstacles.push(obstacle)
@@ -23,12 +24,6 @@ function Game(player) {
     }
        )};
       
-      }
-    });
-  };
-
-
-
 }
 
-export { Game };
+export{Game}
