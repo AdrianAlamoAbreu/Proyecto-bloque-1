@@ -3,11 +3,13 @@ import { Obstacle } from "./obstacle.js";
 import { Game } from "./game.js";
 import { insertPage } from "./welcomePage.js";
 import { gameOver } from "./gameOverPage.js";
+import { winner } from "./winPage.js";
 
 let mainBoard = document.getElementById("main-board");
 let scoreBoard = document.getElementById("scoreBoard");
 let player = new Player(200, 650, mainBoard);
 let game = new Game(player);
+let deleteObstacle = document.getElementsByClassName("obstacle")
 
 // menuButton.addEventListener('click', function () {
 //   menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
@@ -24,8 +26,8 @@ function start() {
     }
   }, 100);
   let checkWinnerTimer = setInterval(function () {
-    if (score1 === 100 && player.sprite.offsetTop >= 645) {
-      alert("You Win!!!!");
+    if (score1 === 10 && player.sprite.offsetTop >= 645) {
+      winner(mainBoard);
     }
   }, 2000);
 }
