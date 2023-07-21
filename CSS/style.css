@@ -1,18 +1,16 @@
 #main-board {
-  background-color: aqua;
+  background-color: rgb(101, 211, 103);
   position: relative;
   width: 1080px;
   height: 900px;
   margin: auto;
   overflow: hidden;
-  
-  
 }
 
 #land {
   position: absolute;
   top: 800px;
-  background-color: rgb(143, 22, 22);
+  background-color: rgb(243, 159, 63);
   width: 1080px;
   height: 100px;
   margin: auto;
@@ -20,16 +18,19 @@
 
 #player {
   position: absolute;
-  background-color: black;
-  width: 100px;
+  background-color:black;
+  width: 120px;
   height: 150px;
+  background-image: url(/images/excite-bike.gif) ;
+  background-size: cover;
+ 
 }
 
 .obstacle {
   position: absolute;
   width: 0px;
   height: 0px;
-  border-bottom: 150px solid #8f1616;
+  border-bottom: 150px solid rgb(243, 159, 63);
   border-left: 200px solid transparent;
   border-right: 0px solid transparent;
 }
@@ -41,12 +42,10 @@
   height: 150px;
 }
 
-#scoreBoard{
+#scoreBoard {
   position: absolute;
   font-size: xx-large;
   color: black;
   left: 50px;
-  top: 10px
-
+  top: 10px;
 }
-

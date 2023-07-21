@@ -9,11 +9,6 @@ let scoreBoard = document.getElementById("scoreBoard");
 let player = new Player(200, 650, mainBoard);
 let game = new Game(player);
 
-// menuButton.addEventListener('click', function () {
-//   menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
-//   start()
-// });
-
 function start() {
   insertPage(mainBoard);
   let obstacleTimer = setInterval(game.createObstacle, 10000);
@@ -33,7 +28,7 @@ function start() {
 let incline = 0;
 
 window.addEventListener("keydown", function (e) {
-  if (player.sprite.offsetTop <= 600) {
+  if (player.sprite.offsetTop <= 550) {
     if (e.key === "a") {
       incline -= 5;
       player.sprite.style.transform = `rotate(${incline}deg)`;
@@ -45,8 +40,9 @@ window.addEventListener("keydown", function (e) {
       incline = 0;
       insertScore();
     }
+    console.log(incline)
   }
-  console.log(player.sprite.offsetTop);
+  // console.log(player.sprite.offsetTop);
 });
 
 window.addEventListener("keyup", function (e) {
