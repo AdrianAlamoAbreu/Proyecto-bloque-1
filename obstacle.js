@@ -16,7 +16,7 @@ function Obstacle (x, y, parent, arr) {
   this.move = function () {
       self.x += self.speed
       self.sprite.style.left = self.x + 'px'
-      if (self.x===-10) {
+      if (self.x===-200) {
           self.obstacleRemove () 
       }
   }

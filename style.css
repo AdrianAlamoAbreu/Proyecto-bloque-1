@@ -10,6 +10,8 @@
 }
 
 #land {
+  position: absolute;
+  top: 800px;
   background-color: rgb(143, 22, 22);
   width: 1080px;
   height: 100px;
@@ -47,3 +49,4 @@
   top: 10px
 
 }
+

@@ -1,46 +1,52 @@
 import { Player } from "./player.js";
 import { Obstacle } from "./obstacle.js";
 import { Game } from "./game.js";
+import { insertPage } from "./welcomePage.js";
 
 let mainBoard = document.getElementById("main-board");
 let scoreBoard = document.getElementById("scoreBoard");
-let player = new Player(200, 750, mainBoard);
+let player = new Player(200, 650, mainBoard);
 let game = new Game(player);
 
+// menuButton.addEventListener('click', function () {
+//   menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
+//   start()
+// });
+
 function start() {
+  insertPage(mainBoard);
   let obstacleTimer = setInterval(game.createObstacle, 10000);
   let collisionTimer = setInterval(game.checkCollision, 100);
-  let gameOverTimer = setInterval(function(){
-    if (Math.abs(incline) > 10 && player.sprite.offsetTop >= 745) {
-          alert('gameOver')
-      }
-  }, 100)
-  let checkWinnerTimer = setInterval(function() {
-    if (score1 === 20 && player.sprite.offsetTop >= 745){
-      alert('You Win!!!!')
+  let gameOverTimer = setInterval(function () {
+    if (Math.abs(incline) > 10 && player.sprite.offsetTop >= 645) {
+      alert("gameOver");
     }
-  },2000)
+  }, 100);
+  let checkWinnerTimer = setInterval(function () {
+    if (score1 === 20 && player.sprite.offsetTop >= 645) {
+      alert("You Win!!!!");
+    }
+  }, 2000);
 }
 
 let incline = 0;
 
 window.addEventListener("keydown", function (e) {
-  if (player.sprite.offsetTop <= 700) {
-  if (e.key === "a") {
-    incline -= 5;
-    player.sprite.style.transform = `rotate(${incline}deg)`;
-  } else if (e.key === "d") {
-    incline += 5;
-    player.sprite.style.transform = `rotate(${incline}deg)`;
-  
+  if (player.sprite.offsetTop <= 600) {
+    if (e.key === "a") {
+      incline -= 5;
+      player.sprite.style.transform = `rotate(${incline}deg)`;
+    } else if (e.key === "d") {
+      incline += 5;
+      player.sprite.style.transform = `rotate(${incline}deg)`;
+    }
+    if (Math.abs(incline) === 360) {
+      incline = 0;
+      insertScore();
+    }
   }
-  if(Math.abs(incline) === 360) {
-    incline = 0
-    insertScore()
-  } 
-}
-
-  console.log(incline)
+console.log(player.sprite.offsetTop)
+  
 });
 
 window.addEventListener("keyup", function (e) {
@@ -49,21 +55,14 @@ window.addEventListener("keyup", function (e) {
   }
 });
 
-let score1 = 0
 
-function insertScore (){
-  // if(incline === 360) {
-    score1 += 10
-    console.log(score1)
-    scoreBoard.innerText = ` ${score1} `
-    
-    
-  // }
+
+let score1 = 0;
+
+function insertScore() {
+  score1 += 10;
+  scoreBoard.innerText = ` ${score1} `;
 }
 
-
-
-
-// let scoreId = setInterval(insertScore, 100)
 player.insertPlayer();
 start();
