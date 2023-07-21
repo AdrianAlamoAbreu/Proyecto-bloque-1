@@ -1,0 +1,35 @@
+#restart {
+  background-color: #8f1616;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 420px;
+  left: 490px;
+  width: 100px;
+  height: 30px;
+  font-size: x-large;
+  text-align: center;
+  font-family:'Courier New', Courier, monospace
+}
+
+#menu-btn :hover {
+  background-color: #f0f0f0;
+}
+
+#main-Board3 {
+  background-color: aqua;
+  position: relative;
+  width: 1080px;
+  height: 900px;
+  margin: auto;
+  overflow: hidden;
+  background-image: url(/images/fondo-pixelador-game-over_1051-1014.jpg);
+  min-width: 500px;
+}
+
+.title {
+  text-align: center;
+  font-size: 64px
+}

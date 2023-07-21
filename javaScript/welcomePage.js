@@ -1,4 +1,4 @@
-function insertPage(parent, fn) {
+function insertPage(parent) {
   const container = document.createElement("div");
   container.innerHTML = `<div id='main-Board2'>
   <h1 class='title'>Super.realistic <br> Motocross Game</h1>
@@ -6,13 +6,11 @@ function insertPage(parent, fn) {
   </div>`;
   parent.appendChild(container);
 
-  let menuButton = document.getElementById("menu-btn");
+  let menuButtom = document.getElementById("menu-btn");
 
-  menuButton.addEventListener("click", function (e) {
+  menuButtom.addEventListener("click", function (e) {
     parent.removeChild(container);
   });
 }
 
 export { insertPage };
-
-

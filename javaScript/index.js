@@ -2,6 +2,7 @@ import { Player } from "./player.js";
 import { Obstacle } from "./obstacle.js";
 import { Game } from "./game.js";
 import { insertPage } from "./welcomePage.js";
+import { gameOver } from "./gameOverPage.js";
 
 let mainBoard = document.getElementById("main-board");
 let scoreBoard = document.getElementById("scoreBoard");
@@ -19,11 +20,11 @@ function start() {
   let collisionTimer = setInterval(game.checkCollision, 100);
   let gameOverTimer = setInterval(function () {
     if (Math.abs(incline) > 10 && player.sprite.offsetTop >= 645) {
-      alert("gameOver");
+      gameOver(mainBoard);
     }
   }, 100);
   let checkWinnerTimer = setInterval(function () {
-    if (score1 === 20 && player.sprite.offsetTop >= 645) {
+    if (score1 === 100 && player.sprite.offsetTop >= 645) {
       alert("You Win!!!!");
     }
   }, 2000);
@@ -45,8 +46,7 @@ window.addEventListener("keydown", function (e) {
       insertScore();
     }
   }
-console.log(player.sprite.offsetTop)
-  
+  console.log(player.sprite.offsetTop);
 });
 
 window.addEventListener("keyup", function (e) {
@@ -54,8 +54,6 @@ window.addEventListener("keyup", function (e) {
     player.sprite.style.transform = `rotate(${incline}deg)`;
   }
 });
-
-
 
 let score1 = 0;
 
