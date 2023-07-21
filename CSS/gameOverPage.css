@@ -26,6 +26,7 @@
   margin: auto;
   overflow: hidden;
   background-image: url(/images/fondo-pixelador-game-over_1051-1014.jpg);
+  background-size: cover;
   min-width: 500px;
 }
 

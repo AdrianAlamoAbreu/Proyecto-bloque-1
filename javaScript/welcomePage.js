@@ -11,6 +11,8 @@ function insertPage(parent) {
   menuButtom.addEventListener("click", function (e) {
     parent.removeChild(container);
   });
+
+  clearInterval()
 }
 
 export { insertPage };
