@@ -2,18 +2,29 @@ import { Player } from "./player.js";
 import { Obstacle } from "./obstacle.js";
 import { Game } from "./game.js";
 import { insertPage } from "./welcomePage.js";
-import { gameOver } from "./gameOverPage.js";
-import { winner } from "./winPage.js";
+import { gameOver } from "./welcomePage.js";
+import { winner } from "./welcomePage.js";
 
 let mainBoard = document.getElementById("main-board");
 let scoreBoard = document.getElementById("scoreBoard");
 let player = new Player(200, 650, mainBoard);
 let game = new Game(player);
-let deleteObstacle = document.getElementsByClassName("obstacle")
+let globalTimer;
+
+function welcomePage() {
+  insertPage(mainBoard);
+}
+
+/*function restart() {
+  player.removePlayer()
+  player.insertPlayer();
+}*/
 
 function start() {
-  insertPage(mainBoard);
+  player.insertPlayer();
+  //restart();
   let obstacleTimer = setInterval(game.createObstacle, 10000);
+  globalTimer = obstacleTimer;
   let collisionTimer = setInterval(game.checkCollision, 100);
   let gameOverTimer = setInterval(function () {
     if (Math.abs(incline) > 10 && player.sprite.offsetTop >= 645) {
@@ -42,7 +53,7 @@ window.addEventListener("keydown", function (e) {
       incline = 0;
       insertScore();
     }
-    console.log(incline)
+    console.log(incline);
   }
   // console.log(player.sprite.offsetTop);
 });
@@ -60,5 +71,10 @@ function insertScore() {
   scoreBoard.innerText = ` ${score1} `;
 }
 
-player.insertPlayer();
-start();
+welcomePage();
+
+export { start };
+export { globalTimer };
+export { player };
+export { incline };
+
