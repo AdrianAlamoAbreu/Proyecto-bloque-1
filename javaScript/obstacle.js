@@ -22,7 +22,7 @@ function Obstacle (x, y, parent, arr) {
   }
 
   this.obstacleRemove = function () {
-      parent.removeChild(this.sprite)
+     parent.removeChild(this.sprite)
       arr.splice(0, 1)
       clearInterval(this.timerId)
   }

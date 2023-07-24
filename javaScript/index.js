@@ -22,6 +22,7 @@ function gameOver() {
   clearInterval(gameOverTimer);
   clearInterval(checkWinnerTimer);
   let obstacleNew = document.querySelectorAll('.obstacle')
+  console.log(obstacleNew)
   
   while (mainBoard.firstChild) { mainBoard.removeChild(mainBoard.firstChild);}
   obstacleNew.forEach((obstacle) => clearInterval(obstacle.timerId))
@@ -31,10 +32,7 @@ function gameOver() {
   <button id="restart">Restart</button>
   `;
 
-
-  
   mainBoard.appendChild(box);
-  
   
   let restartButtom = document.getElementById("restart");
 
@@ -49,12 +47,12 @@ function restart() {
   
   mainBoard.innerHTML = ` <span id="scoreBoard">Score:${score1}</span>
   <div id="land"></div>`
+  score1 = 0;
+  scoreBoard.innerText = `score: ${score1}`;
   game.obstacles = []
   player.y = 650
   incline = 0;
   player.sprite.style.transform = `rotate(${incline}deg)`;
-  score1 = 0;
-  scoreBoard.innerText = `score: ${score1}`;
   start()
   
 }
@@ -72,10 +70,39 @@ function start() {
     }
   }, 100);
   checkWinnerTimer = setInterval(function () {
-    if (score1 === 10 && player.sprite.offsetTop >= 645) {
+    if (score1 === 20 && player.sprite.offsetTop >= 645) {
       winner(mainBoard);
     }
   }, 2000);
+}
+
+function pause() {
+
+  clearInterval(obstacleTimer);
+  clearInterval(collisionTimer);
+  clearInterval(gameOverTimer);
+  clearInterval(checkWinnerTimer);
+  let obstacleNew = document.querySelectorAll('.obstacle')
+  
+  while (mainBoard.firstChild) { mainBoard.removeChild(mainBoard.firstChild);}
+  obstacleNew.forEach((obstacle) => clearInterval(obstacle.timerId))
+  const box = document.createElement("div");
+  box.setAttribute('id', 'main-Board5')
+  box.innerHTML = `
+  <button id="restart"></button>
+  `;
+  mainBoard.appendChild(box);
+
+  let restartButtom = document.getElementById("restart");
+
+  restartButtom.addEventListener("click", function (e) {
+    mainBoard.removeChild(box);
+    mainBoard.innerHTML = ` <span id="scoreBoard">Score:${score1}</span>
+    <div id="land"></div> `
+  
+  player.sprite.style.transform = `rotate(${incline}deg)`;
+  start()
+  });
 }
 
 let incline = 0;
@@ -95,7 +122,10 @@ window.addEventListener("keydown", function (e) {
     }
     console.log(incline);
   }
-  console.log(player.sprite.offsetTop);
+  if (e.key === 'p') {
+    pause()
+  }
+
 });
 
 window.addEventListener("keyup", function (e) {
