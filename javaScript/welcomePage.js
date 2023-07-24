@@ -1,7 +1,5 @@
-import { start } from "./index.js";
-import { globalTimer } from "./index.js";
-import { player } from "./index.js";
-import { incline } from "./index.js";
+import { start, restart } from "./index.js";
+// import { globalTimer } from "./index.js";
 
 function insertPage(parent) {
   const container = document.createElement("div");
@@ -20,7 +18,7 @@ function insertPage(parent) {
 }
 
 function winner(parent) {
-  clearInterval(globalTimer)
+ 
   const box = document.createElement("div");
   box.innerHTML = `<div id='main-Board4'>
   <h1>YOU WIN!!!! <br> CONGRATULATIONS</h1>
@@ -32,27 +30,10 @@ function winner(parent) {
 
   restartButtom.addEventListener("click", function (e) {
     parent.removeChild(box);
-    start();
+    restart();
   });
 }
 
-function gameOver(parent) {
-  clearInterval(globalTimer)
-  const box = document.createElement("div");
-  box.innerHTML = `<div id='main-Board3'>
-  <buttom id="restart">Restart</buttom>
-  </div>`;
-  parent.appendChild(box);
 
-  let restartButtom = document.getElementById("restart");
 
-  restartButtom.addEventListener("click", function (e) {
-    parent.removeChild(box);
- 
-    start();
-  });
-}
-
-export { gameOver };
-export { insertPage };
-export { winner };
+export {insertPage, winner };

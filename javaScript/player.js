@@ -16,4 +16,4 @@ function Player (x,y,parent) {
     }
 }
 
-export{Player}
+export{ Player }
