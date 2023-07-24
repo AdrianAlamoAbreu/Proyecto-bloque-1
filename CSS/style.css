@@ -1,5 +1,5 @@
 #main-board {
-  background-color: rgb(101, 211, 103);
+  background-image: url(/images/Background.jpg);
   position: relative;
   width: 1080px;
   height: 900px;
@@ -10,7 +10,7 @@
 #land {
   position: absolute;
   top: 800px;
-  background-color: rgb(243, 159, 63);
+  background-image:url(/images/road.jpg);
   width: 1080px;
   height: 100px;
   margin: auto;
@@ -18,28 +18,19 @@
 
 #player {
   position: absolute;
-  background-color:black;
+  background-color: black;
   width: 120px;
   height: 150px;
-  background-image: url(/images/excite-bike.gif) ;
+  background-image: url(/images/bikerNew.jpg);
   background-size: cover;
- 
 }
 
 .obstacle {
+  background-image: url(/images/rampa.jpg) ;
   position: absolute;
-  width: 0px;
-  height: 0px;
-  border-bottom: 150px solid rgb(243, 159, 63);
-  border-left: 200px solid transparent;
-  border-right: 0px solid transparent;
-}
-
-.circle {
-  position: absolute;
-  background-color: brown;
-  width: 100px;
+  width: 200px;
   height: 150px;
+ 
 }
 
 #scoreBoard {

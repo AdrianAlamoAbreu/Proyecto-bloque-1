@@ -1,0 +1,28 @@
+#main-Board5 {
+  position: relative;
+  width: 1080px;
+  height: 900px;
+  margin: auto;
+  overflow: hidden;
+  background-image: url(/images/img-pause.jpg);
+  background-size: cover;
+  min-width: 500px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#restart {
+  background-image: url(/images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png) ;
+  background-size: cover ;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 420px;
+  left: 470px;
+  width: 130px;
+  height: 40px;
+
+}
