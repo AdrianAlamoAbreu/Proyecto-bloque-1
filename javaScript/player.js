@@ -11,6 +11,9 @@ function Player (x,y,parent) {
         this.sprite.style.top = this.y + 'px'
         parent.appendChild(this.sprite)
     }
+    this.removePlayer = function () {
+        parent.removeChild(this.sprite)
+    }
 }
 
-export{Player}
+export{ Player }

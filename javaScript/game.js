@@ -15,10 +15,10 @@ function Game (player) {
        self.obstacles.forEach(obstacle => {
         if (self.player.x + self.player.width >= obstacle.x && self.player.x < obstacle.x + obstacle.width + 10
            ) {
-            self.player.y -= 7;
+            self.player.y -= 15;
             self.player.sprite.style.top = self.player.y +'px' 
         } else if (self.player.y <= 645) {
-            self.player.y +=7;
+            self.player.y += 15;
             self.player.sprite.style.top = self.player.y +'px' 
         } 
     }
