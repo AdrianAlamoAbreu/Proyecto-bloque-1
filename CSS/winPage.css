@@ -6,9 +6,10 @@
     height: 900px;
     margin: auto;
     overflow: hidden;
-    background-image: url(/images/childwinner.png);
-    background-size:  cover;
+    background-image: url(/images/2661542-55053150-2560-1440.jpg);
+    background-size:cover;
     min-width: 500px;
+    background-repeat:no-repeat;
   }
 
 

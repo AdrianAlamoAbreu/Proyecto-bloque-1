@@ -19,15 +19,15 @@
 }
 
 #main-Board3 {
-  background-color: aqua;
   position: relative;
   width: 1080px;
   height: 900px;
   margin: auto;
   overflow: hidden;
-  background-image: url(/images/fondo-pixelador-game-over_1051-1014.jpg);
-  background-size: cover;
+  background-image: url(/images/gameOverFinal.jpg);
+  background-size:contain;
   min-width: 500px;
+  margin-bottom: 300 px;
 }
 
 .title {

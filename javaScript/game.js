@@ -13,9 +13,9 @@ function Game (player) {
     }
     this.checkCollision= function() {
        self.obstacles.forEach(obstacle => {
-        if (self.player.x + self.player.width >= obstacle.x && self.player.x < obstacle.x + obstacle.width + 10
+        if (self.player.x + self.player.width >= obstacle.x && self.player.x < obstacle.x + obstacle.width + 20
            ) {
-            self.player.y -= 21;
+            self.player.y -= 23;
             self.player.sprite.style.top = self.player.y +'px' 
         } else if (self.player.y <= 400) {
             self.player.y += 21;

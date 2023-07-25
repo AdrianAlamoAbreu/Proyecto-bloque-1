@@ -1,5 +1,6 @@
 #main-board {
-  background-image: url(/images/Background.jpg);
+  background-image: url(/images/animatedBackground.gif);
+  background-size:cover;
   position: relative;
   width: 1080px;
   height: 700px;

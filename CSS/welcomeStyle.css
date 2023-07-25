@@ -5,11 +5,10 @@
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 420px;
+  top: 300px;
   left: 470px;
   width: 130px;
   height: 40px;
-
 }
 
 #menu-btn :hover {
@@ -17,17 +16,23 @@
 }
 
 #main-Board2 {
-  background-color: aqua;
   position: relative;
   width: 1080px;
   height: 900px;
   margin: auto;
   overflow: hidden;
-  background-image: url(/images/motocrossmania-1.jpg);
-  background-size: cover;
+  background-image: url(/images/mainScreen.jpeg);
+  background-size: contain;
 }
 
 .title {
-  text-align: center;
   font-size: 64px
+}
+
+h1 {
+  color: white;
+  position: absolute;
+  margin-left: 50px ;
+  margin-top: 10px;
+  font-family:fantasy;
 }
