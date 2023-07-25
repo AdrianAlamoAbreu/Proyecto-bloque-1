@@ -1,114 +1,56 @@
 import { Player } from "./player.js";
 import { Game } from "./game.js";
-import { insertPage, winner } from "./welcomePage.js";
+import { insertPage } from "./welcomePage.js";
+import { gameOver } from "./gameOverPage.js";
+import { winner } from "./winPage.js";
+import { pause } from "./pausePage.js";
 
 let mainBoard = document.getElementById("main-board");
 let scoreBoard = document.getElementById("scoreBoard");
-let player = new Player(200, 650, mainBoard);
+
+let player = new Player(200, 450, mainBoard);
 let game = new Game(player);
-let obstacleTimer
-let collisionTimer
-let gameOverTimer
-let checkWinnerTimer
 
-
-function welcomePage() {
-  insertPage(mainBoard);
-}
-
-function gameOver() {
-  clearInterval(obstacleTimer);
-  clearInterval(collisionTimer);
-  clearInterval(gameOverTimer);
-  clearInterval(checkWinnerTimer);
-  let obstacleNew = document.querySelectorAll('.obstacle')
-  console.log(obstacleNew)
-  
-  while (mainBoard.firstChild) { mainBoard.removeChild(mainBoard.firstChild);}
-  obstacleNew.forEach((obstacle) => clearInterval(obstacle.timerId))
-  const box = document.createElement("div");
-  box.setAttribute('id', 'main-Board3')
-  box.innerHTML = `
-  <button id="restart">Restart</button>
-  `;
-
-  mainBoard.appendChild(box);
-  
-  let restartButtom = document.getElementById("restart");
-
-  restartButtom.addEventListener("click", function (e) {
-   mainBoard.removeChild(box);
-    restart();
-   
-  });
-}
-
-function restart() {
-  
-  mainBoard.innerHTML = ` <span id="scoreBoard">Score:${score1}</span>
-  <div id="land"></div>`
-  score1 = 0;
-  scoreBoard.innerText = `score: ${score1}`;
-  game.obstacles = []
-  player.y = 650
-  incline = 0;
-  player.sprite.style.transform = `rotate(${incline}deg)`;
-  start()
-  
-}
+let obstacleTimer;
+let collisionTimer;
+let gameOverTimer;
+let checkWinnerTimer;
 
 function start() {
-  
   player.insertPlayer();
-  obstacleTimer = setInterval(game.createObstacle, 5000);
 
+  obstacleTimer = setInterval(game.createObstacle, 5000);
   collisionTimer = setInterval(game.checkCollision, 100);
-  
+
   gameOverTimer = setInterval(function () {
-    if (Math.abs(incline) > 10 && player.sprite.offsetTop >= 645) {
+    if (Math.abs(incline) > 10 && player.sprite.offsetTop >= 445) {
       gameOver(mainBoard);
     }
   }, 100);
   checkWinnerTimer = setInterval(function () {
-    if (score1 === 20 && player.sprite.offsetTop >= 645) {
+    if (score1 === 20 && player.sprite.offsetTop >= 445) {
       winner(mainBoard);
     }
   }, 2000);
 }
 
-function pause() {
-
-  clearInterval(obstacleTimer);
-  clearInterval(collisionTimer);
-  clearInterval(gameOverTimer);
-  clearInterval(checkWinnerTimer);
-  let obstacleNew = document.querySelectorAll('.obstacle')
-  
-  while (mainBoard.firstChild) { mainBoard.removeChild(mainBoard.firstChild);}
-  obstacleNew.forEach((obstacle) => clearInterval(obstacle.timerId))
-  const box = document.createElement("div");
-  box.setAttribute('id', 'main-Board5')
-  box.innerHTML = `
-  <button id="restart"></button>
-  `;
-  mainBoard.appendChild(box);
-
-  let restartButtom = document.getElementById("restart");
-
-  restartButtom.addEventListener("click", function (e) {
-    mainBoard.removeChild(box);
-    mainBoard.innerHTML = ` <span id="scoreBoard">Score:${score1}</span>
-    <div id="land"></div> `
-  
+function restart() {
+  mainBoard.innerHTML = ` <span id="scoreBoard">Score:${score1}</span>
+  <div id="land"></div>`;
+  scoreBoard = document.getElementById("scoreBoard");
+  score1 = 0;
+  scoreBoard.innerText = `Score: ${score1}`;
+  game.obstacles = [];
+  player.y = 450;
+  incline = 0;
   player.sprite.style.transform = `rotate(${incline}deg)`;
-  start()
-  });
+  start();
 }
 
 let incline = 0;
 
 window.addEventListener("keydown", function (e) {
-  if (player.sprite.offsetTop <= 550) {
+  if (player.sprite.offsetTop <= 350) {
     if (e.key === "a") {
       incline -= 10;
       player.sprite.style.transform = `rotate(${incline}deg)`;
@@ -122,10 +64,9 @@ window.addEventListener("keydown", function (e) {
     }
     console.log(incline);
   }
-  if (e.key === 'p') {
-    pause()
+  if (e.key === "p") {
+    pause();
   }
-
 });
 
 window.addEventListener("keyup", function (e) {
@@ -141,7 +82,7 @@ function insertScore() {
   scoreBoard.innerText = `score: ${score1} `;
 }
 
-welcomePage();
+insertPage(mainBoard);
 
-export { start, restart};
-//export { globalTimer };
+export { start, restart };
+export { obstacleTimer, collisionTimer, gameOverTimer, checkWinnerTimer, game };

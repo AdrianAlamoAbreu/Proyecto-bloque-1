@@ -7,7 +7,7 @@ function Game (player) {
     this.player = player;
 
     this.createObstacle = function () {
-        let obstacle = new Obstacle (980, 650, mainBoard, self.obstacles)
+        let obstacle = new Obstacle (980, 450, mainBoard, self.obstacles)
         obstacle.insertObstacle()
         self.obstacles.push(obstacle)
     }
@@ -17,7 +17,7 @@ function Game (player) {
            ) {
             self.player.y -= 15;
             self.player.sprite.style.top = self.player.y +'px' 
-        } else if (self.player.y <= 645) {
+        } else if (self.player.y <= 445) {
             self.player.y += 15;
             self.player.sprite.style.top = self.player.y +'px' 
         } 

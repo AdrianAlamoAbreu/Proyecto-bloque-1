@@ -1,12 +1,13 @@
 #main-Board4 {
-    background-color: aqua;
+    
     position: relative;
+    
     width: 1080px;
     height: 900px;
     margin: auto;
     overflow: hidden;
-    background-image: url(/images/fondo-winner.jpg);
-    background-size: cover;
+    background-image: url(/images/childwinner.png);
+    background-size:  cover;
     min-width: 500px;
   }
 

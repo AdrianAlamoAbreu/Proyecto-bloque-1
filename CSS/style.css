@@ -2,15 +2,15 @@
   background-image: url(/images/Background.jpg);
   position: relative;
   width: 1080px;
-  height: 900px;
+  height: 700px;
   margin: auto;
   overflow: hidden;
 }
 
 #land {
   position: absolute;
-  top: 800px;
-  background-image:url(/images/road.jpg);
+  top: 600px;
+  background-image: url(/images/road.jpg);
   width: 1080px;
   height: 100px;
   margin: auto;
@@ -18,25 +18,31 @@
 
 #player {
   position: absolute;
-  background-color: black;
   width: 120px;
   height: 150px;
-  background-image: url(/images/bikerNew.jpg);
+  background-color:black;
   background-size: cover;
 }
 
 .obstacle {
-  background-image: url(/images/rampa.jpg) ;
+  background-image: url(/images/rampa.jpg);
   position: absolute;
   width: 200px;
   height: 150px;
- 
 }
 
 #scoreBoard {
   position: absolute;
   font-size: xx-large;
-  color: black;
-  left: 50px;
+  color: whitesmoke;
+  left: 540px;
   top: 10px;
 }
+
+#playSong{
+  position: absolute;
+}
+
+
+
+

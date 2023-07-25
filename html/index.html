@@ -7,15 +7,24 @@
     <link rel="stylesheet" href="/CSS/style.css" />
     <link rel="stylesheet" href="/CSS/welcomeStyle.css" />
     <link rel="stylesheet" href="/CSS/gameOverPage.css" />
-    <link rel="stylesheet" href="/CSS/winPage.css"/>
-    <link rel="stylesheet" href="/CSS/pause.css"/>
+    <link rel="stylesheet" href="/CSS/winPage.css" />
+    <link rel="stylesheet" href="/CSS/pause.css" />
     <script src="/javaScript/index.js" type="module" defer></script>
+    <script src="/javaScript/gameOverPage.js" type="module" defer></script>
+    <script src="/javaScript/welcomePage.js" type="module" defer></script>
+    <script src="/javaScript/winPage.js" type="module" defer></script>
+    <script src="/javaScript/obstacle.js" type="module" defer></script>
+    <script src="/javaScript/player.js" type="module" defer></script>
+    <script src="/javaScript/game.js" type="module" defer></script>
   </head>
   <body>
     <main id="main-board">
       <audio id="playSong" controls autoplay>
-        <source src="/music/GB-Motocross_Maniacs-Soundtrack_64_kbps.mp3" type="audio/mp3">
-        </audio>
+        <source
+          src="/music/GB-Motocross_Maniacs-Soundtrack_64_kbps.mp3"
+          type="audio/mp3"
+        />
+      </audio>
       <span id="scoreBoard">Score: 0</span>
       <div id="land"></div>
     </main>
