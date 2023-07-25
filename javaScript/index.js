@@ -21,18 +21,20 @@ let playSong = new Audio("/music/GB-Motocross_Maniacs-Soundtrack_64_kbps.mp3");
 function start() {
   player.insertPlayer();
   playSong.play()
-
+  playSong.volume = 0.1
   obstacleTimer = setInterval(game.createObstacle, 4000);
   collisionTimer = setInterval(game.checkCollision, 100);
 
   gameOverTimer = setInterval(function () {
     if (Math.abs(incline) > 20 && player.sprite.offsetTop >= 400) {
       gameOver(mainBoard);
+     
     }
   }, 100);
   checkWinnerTimer = setInterval(function () {
-    if (score1 === 50 && player.sprite.offsetTop >= 400) {
+    if (score1 === 10 && player.sprite.offsetTop >= 400) {
       winner(mainBoard);
+      
     }
   }, 2000);
 }
@@ -82,4 +84,4 @@ function insertScore() {
 insertPage(mainBoard);
 
 export { start, restart };
-export { obstacleTimer, collisionTimer, gameOverTimer, checkWinnerTimer, game };
+export { obstacleTimer, collisionTimer, gameOverTimer, checkWinnerTimer, game, playSong };

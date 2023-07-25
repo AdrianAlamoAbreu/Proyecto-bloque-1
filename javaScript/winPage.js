@@ -5,13 +5,18 @@ import {
   gameOverTimer,
   checkWinnerTimer,
   game,
+  playSong
 } from "./index.js";
+
+let winSong = new Audio('/music/Win_sound_effect_no_copyright_64_kbps.mp3')
 
 function winner(parent) {
   clearInterval(obstacleTimer);
   clearInterval(collisionTimer);
   clearInterval(gameOverTimer);
   clearInterval(checkWinnerTimer);
+
+  winSong.play()
 
   game.obstacles.forEach((obstacle) => clearInterval(obstacle.timerId));
 
@@ -26,7 +31,7 @@ function winner(parent) {
   `;
 
   parent.appendChild(box);
-
+  playSong.pause()
   let restartButtom = document.getElementById("restart");
 
   restartButtom.addEventListener("click", function (e) {
