@@ -8,7 +8,7 @@ import { pause } from "./pausePage.js";
 let mainBoard = document.getElementById("main-board");
 let scoreBoard = document.getElementById("scoreBoard");
 
-let player = new Player(200, 450, mainBoard);
+let player = new Player(200, 405, mainBoard);
 let game = new Game(player);
 
 let obstacleTimer;
@@ -16,19 +16,22 @@ let collisionTimer;
 let gameOverTimer;
 let checkWinnerTimer;
 
+let playSong = new Audio("/music/GB-Motocross_Maniacs-Soundtrack_64_kbps.mp3");
+
 function start() {
   player.insertPlayer();
+  playSong.play()
 
-  obstacleTimer = setInterval(game.createObstacle, 5000);
+  obstacleTimer = setInterval(game.createObstacle, 4000);
   collisionTimer = setInterval(game.checkCollision, 100);
 
   gameOverTimer = setInterval(function () {
-    if (Math.abs(incline) > 10 && player.sprite.offsetTop >= 445) {
+    if (Math.abs(incline) > 20 && player.sprite.offsetTop >= 400) {
       gameOver(mainBoard);
     }
   }, 100);
   checkWinnerTimer = setInterval(function () {
-    if (score1 === 20 && player.sprite.offsetTop >= 445) {
+    if (score1 === 50 && player.sprite.offsetTop >= 400) {
       winner(mainBoard);
     }
   }, 2000);
@@ -41,7 +44,7 @@ function restart() {
   score1 = 0;
   scoreBoard.innerText = `Score: ${score1}`;
   game.obstacles = [];
-  player.y = 450;
+  player.y = 405;
   incline = 0;
   player.sprite.style.transform = `rotate(${incline}deg)`;
   start();
@@ -51,6 +54,7 @@ let incline = 0;
 
 window.addEventListener("keydown", function (e) {
   if (player.sprite.offsetTop <= 350) {
+    console.log(player.sprite.offsetTop);
     if (e.key === "a") {
       incline -= 10;
       player.sprite.style.transform = `rotate(${incline}deg)`;
@@ -62,16 +66,9 @@ window.addEventListener("keydown", function (e) {
       incline = 0;
       insertScore();
     }
-    console.log(incline);
   }
   if (e.key === "p") {
     pause();
-  }
-});
-
-window.addEventListener("keyup", function (e) {
-  if (e.key === "a" || e.key === "d") {
-    player.sprite.style.transform = `rotate(${incline}deg)`;
   }
 });
 

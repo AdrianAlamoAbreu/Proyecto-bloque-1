@@ -27,7 +27,7 @@ function Obstacle (x, y, parent, arr) {
       clearInterval(this.timerId)
   }
 
-  this.timerId = setInterval(this.move,50)
+  this.timerId = setInterval(this.move,40)
 }
 
 export {Obstacle}
