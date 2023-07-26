@@ -3,7 +3,7 @@ import { Game } from "./game.js";
 import { insertPage } from "./welcomePage.js";
 import { gameOver } from "./gameOverPage.js";
 import { winner } from "./winPage.js";
-import { pause } from "./pausePage.js";
+
 
 let mainBoard = document.getElementById("main-board");
 let scoreBoard = document.getElementById("scoreBoard");
@@ -20,21 +20,19 @@ let playSong = new Audio("/music/GB-Motocross_Maniacs-Soundtrack_64_kbps.mp3");
 
 function start() {
   player.insertPlayer();
-  playSong.play()
-  playSong.volume = 0.1
+  playSong.play();
+  playSong.volume = 0.1;
   obstacleTimer = setInterval(game.createObstacle, 4000);
   collisionTimer = setInterval(game.checkCollision, 100);
 
   gameOverTimer = setInterval(function () {
     if (Math.abs(incline) > 20 && player.sprite.offsetTop >= 400) {
       gameOver(mainBoard);
-     
     }
   }, 100);
   checkWinnerTimer = setInterval(function () {
-    if (score1 === 10 && player.sprite.offsetTop >= 400) {
+    if (score1 === 50 && player.sprite.offsetTop >= 400) {
       winner(mainBoard);
-      
     }
   }, 2000);
 }
@@ -49,6 +47,7 @@ function restart() {
   player.y = 405;
   incline = 0;
   player.sprite.style.transform = `rotate(${incline}deg)`;
+  playSong.currentTime = 0;
   start();
 }
 
@@ -69,9 +68,6 @@ window.addEventListener("keydown", function (e) {
       insertScore();
     }
   }
-  if (e.key === "p") {
-    pause();
-  }
 });
 
 let score1 = 0;
@@ -84,4 +80,11 @@ function insertScore() {
 insertPage(mainBoard);
 
 export { start, restart };
-export { obstacleTimer, collisionTimer, gameOverTimer, checkWinnerTimer, game, playSong };
+export {
+  obstacleTimer,
+  collisionTimer,
+  gameOverTimer,
+  checkWinnerTimer,
+  game,
+  playSong,
+};

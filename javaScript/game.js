@@ -18,7 +18,7 @@ function Game (player) {
             self.player.y -= 23;
             self.player.sprite.style.top = self.player.y +'px' 
         } else if (self.player.y <= 400) {
-            self.player.y += 21;
+            self.player.y += 23;
             self.player.sprite.style.top = self.player.y +'px' 
         } 
     }

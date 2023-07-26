@@ -18,11 +18,14 @@
 #main-Board2 {
   position: relative;
   width: 1080px;
-  height: 900px;
+  height: 700px;
   margin: auto;
   overflow: hidden;
-  background-image: url(/images/mainScreen.jpeg);
-  background-size: contain;
+  background-image: url(/images/motocrossmania-1-removebg-preview.jpg);
+  background-size: cover;
+  
+  
+ 
 }
 
 .title {
