@@ -4,14 +4,14 @@
   height: 700px;
   margin: auto;
   overflow: hidden;
-  background-image: url(/images/2661542-55053150-2560-1440.jpg);
+  background-image: url(./images/2661542-55053150-2560-1440.jpg);
   background-size: cover;
   min-width: 500px;
   background-repeat: no-repeat;
 }
 
 /*#restart {
-  background-image: url(/images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
+  background-image: url(./images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
   background-size: cover;
   padding: 10px;
   position: absolute;
