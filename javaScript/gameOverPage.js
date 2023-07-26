@@ -27,7 +27,7 @@ function gameOver(parent) {
   const box = document.createElement("div");
   box.setAttribute("id", "main-Board3");
   box.innerHTML = `
-  <button id="restart"></button>
+  <button id="menu-btn"></button>
   `;
 
   parent.appendChild(box);

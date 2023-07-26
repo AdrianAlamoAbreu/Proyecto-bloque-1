@@ -4,7 +4,7 @@ function insertPage(parent) {
   const container = document.createElement("div");
   container.innerHTML = `<div id='main-Board2'>
   <h1 class='title'></h1>
-  <buttom id="menu-btn"></buttom>
+  <button id="menu-btn"></button>
   </div>`;
   parent.appendChild(container);
 

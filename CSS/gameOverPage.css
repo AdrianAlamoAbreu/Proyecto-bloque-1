@@ -1,36 +1,25 @@
-#restart {
-  background-color: #8f1616;
-  color: #fff;
+/*#restart {
+  background-image: url(/images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
+  background-size: cover;
   padding: 10px;
-  border: none;
-  cursor: pointer;
   position: absolute;
-  top: 420px;
-  left: 490px;
-  width: 100px;
-  height: 30px;
-  font-size: x-large;
-  text-align: center;
-  font-family:'Courier New', Courier, monospace
-}
-
-#menu-btn :hover {
-  background-color: #f0f0f0;
-}
+  top: 390px;
+  left: 470px;
+  width: 130px;
+  height: 40px;
+}*/
 
 #main-Board3 {
   position: relative;
   width: 1080px;
-  height: 900px;
+  height: 700px;
   margin: auto;
   overflow: hidden;
   background-image: url(/images/gameOverFinal.jpg);
-  background-size:contain;
+  background-size: cover;
   min-width: 500px;
   margin-bottom: 300 px;
+  background-repeat: no-repeat;
 }
 
-.title {
-  text-align: center;
-  font-size: 64px
-}
+

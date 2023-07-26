@@ -1,18 +1,12 @@
 #menu-btn {
-  background-image: url(/images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png) ;
-  background-size: cover ;
+  background-image: url(/images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
+  background-size: cover;
   padding: 10px;
-  border: none;
-  cursor: pointer;
   position: absolute;
-  top: 300px;
+  top: 390px;
   left: 470px;
   width: 130px;
   height: 40px;
-}
-
-#menu-btn :hover {
-  background-color: #f0f0f0;
 }
 
 #main-Board2 {
@@ -23,19 +17,8 @@
   overflow: hidden;
   background-image: url(/images/motocrossmania-1-removebg-preview.jpg);
   background-size: cover;
-  
-  
- 
 }
 
-.title {
-  font-size: 64px
-}
 
-h1 {
-  color: white;
-  position: absolute;
-  margin-left: 50px ;
-  margin-top: 10px;
-  font-family:fantasy;
-}
+
+
