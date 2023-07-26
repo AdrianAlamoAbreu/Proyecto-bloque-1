@@ -8,7 +8,7 @@ import {
   playSong
 } from "./index.js";
 
-let winSong = new Audio('/music/Win_sound_effect_no_copyright_64_kbps.mp3')
+let winSong = new Audio('./music/Win_sound_effect_no_copyright_64_kbps.mp3')
 
 function winner(parent) {
   clearInterval(obstacleTimer);
