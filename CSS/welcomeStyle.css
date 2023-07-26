@@ -1,5 +1,5 @@
 #menu-btn {
-  background-image: url(/images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
+  background-image: url(./images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
   background-size: cover;
   padding: 10px;
   position: absolute;
@@ -15,7 +15,7 @@
   height: 700px;
   margin: auto;
   overflow: hidden;
-  background-image: url(/images/motocrossmania-1-removebg-preview.jpg);
+  background-image: url(./images/motocrossmania-1-removebg-preview.jpg);
   background-size: cover;
 }
 
