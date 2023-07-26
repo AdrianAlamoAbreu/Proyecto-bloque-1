@@ -1,5 +1,5 @@
 /*#restart {
-  background-image: url(/images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
+  background-image: url(./images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
   background-size: cover;
   padding: 10px;
   position: absolute;
@@ -15,7 +15,7 @@
   height: 700px;
   margin: auto;
   overflow: hidden;
-  background-image: url(/images/gameOverFinal.jpg);
+  background-image: url(./images/gameOverFinal.jpg);
   background-size: cover;
   min-width: 500px;
   margin-bottom: 300 px;
