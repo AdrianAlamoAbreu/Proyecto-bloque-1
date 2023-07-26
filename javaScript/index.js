@@ -16,7 +16,7 @@ let collisionTimer;
 let gameOverTimer;
 let checkWinnerTimer;
 
-let playSong = new Audio("/music/GB-Motocross_Maniacs-Soundtrack_64_kbps.mp3");
+let playSong = new Audio("./music/GB-Motocross_Maniacs-Soundtrack_64_kbps.mp3");
 
 function start() {
   player.insertPlayer();
