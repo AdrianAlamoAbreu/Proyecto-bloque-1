@@ -8,7 +8,7 @@ import {
   playSong
 } from "./index.js";
 
-let gameOverSong = new Audio('/music/Game_Over_sound_effect_64_kbps.mp3')
+let gameOverSong = new Audio('./music/Game_Over_sound_effect_64_kbps.mp3')
 
 function gameOver(parent) {
   clearInterval(obstacleTimer);
