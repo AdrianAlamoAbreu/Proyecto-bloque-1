@@ -10,4 +10,13 @@
   background-repeat: no-repeat;
 }
 
-
+#restart {
+  background-image: url(../images/Captura\ de\ pantalla\ 2023-07-21\ 201248.png);
+  background-size: cover;
+  padding: 10px;
+  position: absolute;
+  top: 390px;
+  left: 470px;
+  width: 130px;
+  height: 40px;
+}
