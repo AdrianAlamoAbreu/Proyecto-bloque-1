@@ -16,6 +16,7 @@ function winner(parent) {
   clearInterval(gameOverTimer);
   clearInterval(checkWinnerTimer);
 
+  winSong.volume = 0.1;
   winSong.play()
 
   game.obstacles.forEach((obstacle) => clearInterval(obstacle.timerId));
