@@ -27,7 +27,7 @@ function winner(parent) {
   const box = document.createElement("div");
   box.setAttribute("id", "main-Board4");
   box.innerHTML = `
-  <button id="menu-btn"></button>
+  <button id="restart"></button>
   `;
 
   parent.appendChild(box);
